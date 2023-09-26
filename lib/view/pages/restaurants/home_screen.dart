@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
 
 showBottomSheet(BuildContext context) {
   var size = MediaQuery.of(context).size;
-  double customSheetHeight = size.height * 1; // Adjust the height as needed
+  double customSheetHeight = size.height * 1;
 
   showModalBottomSheet(
     context: context,

@@ -72,7 +72,7 @@ class ListCard extends StatelessWidget {
                     ),
                     Text(
                       hotelId,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 12,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
