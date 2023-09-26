@@ -34,7 +34,7 @@ class ProfieDataWidget extends StatelessWidget {
               const CircleAvatar(
                 radius: 60,
                 backgroundImage: NetworkImage(
-                    'https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg'),
+                    'https://spng.pngfind.com/pngs/s/110-1102775_download-empty-profile-hd-png-download.png'),
               ),
               SizedBox(
                 height: size.height / 40,

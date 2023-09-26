@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                 height: size.height / 11,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 185, 176, 176),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Row(
@@ -136,7 +136,7 @@ showBottomSheet(BuildContext context) {
                             'https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg'),
                       ),
                       title: const Text(
-                        'Welcom',
+                        'Welcome',
                         style: TextStyle(color: Colors.white, fontSize: 10),
                       ),
                       subtitle: Text(

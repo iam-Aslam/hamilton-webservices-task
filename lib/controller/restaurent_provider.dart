@@ -19,7 +19,6 @@ class RestaurantProvider with ChangeNotifier {
         restaurants = restaurantData
             .map((json) => RestaurantModel.fromJson(json))
             .toList();
-        // log(response.data["data"].toString());
         notifyListeners();
       } else {
         throw Exception('Failed to load restaurants');

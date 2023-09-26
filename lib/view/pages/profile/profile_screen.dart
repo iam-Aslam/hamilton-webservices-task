@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
                 height: size.height / 11,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 185, 176, 176),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Padding(
@@ -34,7 +34,7 @@ class ProfileScreen extends StatelessWidget {
                         child: const CircleAvatar(
                           backgroundColor: Color.fromARGB(222, 58, 16, 174),
                           radius: 20,
-                          child: Icon(Icons.library_books_rounded),
+                          child: Icon(Icons.settings_outlined),
                         ),
                       )
                     ],
