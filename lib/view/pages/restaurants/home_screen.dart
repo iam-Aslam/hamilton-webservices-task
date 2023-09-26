@@ -1,11 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-
+import 'package:provider/provider.dart';
+import 'package:task/controller/restaurent_provider.dart';
+import 'package:task/controller/user_provider.dart';
 import 'package:task/utils/colors.dart';
 import 'package:task/view/pages/profile/profile_screen.dart';
 import 'package:task/view/pages/restaurants/widgets/card_widget.dart';
-
 import 'widgets/view_button_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,12 +28,28 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return const ListCard();
-                    },
-                    itemCount: 10),
+                child: Consumer<RestaurantProvider>(
+                    builder: (context, value, child) {
+                  if (value.restaurants.isEmpty) {
+                    value.getRestaurants();
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else {
+                    return ListView.builder(
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          return ListCard(
+                            image: value.restaurants[index].logo,
+                            heading: value.restaurants[index].nameEn,
+                            foodType: value.restaurants[index].foodTypeEn,
+                            rating: value.restaurants[index].rating,
+                            hotelId: value.restaurants[index].hotelId,
+                          );
+                        },
+                        itemCount: value.restaurants.length);
+                  }
+                }),
               )
             ],
           ),
@@ -104,23 +121,34 @@ showBottomSheet(BuildContext context) {
               SizedBox(
                 height: size.height / 50,
               ),
-              const ListTile(
-                leading: CircleAvatar(
-                  radius: 30,
-                  backgroundImage: NetworkImage(
-                      'https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg'),
-                ),
-                title: Text(
-                  'welcome',
-                  style: TextStyle(color: Colors.white, fontSize: 10),
-                ),
-                subtitle: Text(
-                  'welcome',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
-                ),
+              Consumer<UserProvider>(
+                builder: (context, value, child) {
+                  if (value.userData == null) {
+                    value.fetchUserData();
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else {
+                    return ListTile(
+                      leading: const CircleAvatar(
+                        radius: 30,
+                        backgroundImage: NetworkImage(
+                            'https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg'),
+                      ),
+                      title: const Text(
+                        'Welcom',
+                        style: TextStyle(color: Colors.white, fontSize: 10),
+                      ),
+                      subtitle: Text(
+                        value.userData!.username,
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    );
+                  }
+                },
               ),
               SizedBox(
                 height: size.height / 50,

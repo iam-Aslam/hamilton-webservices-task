@@ -30,7 +30,7 @@ class SignupButtonWidget extends StatelessWidget {
                       context,
                       PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: const SignUpScreen()));
+                          child: SignUpScreen()));
                 },
                 child: const Text(
                   'Sign up',

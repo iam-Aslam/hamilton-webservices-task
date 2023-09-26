@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                   const SkipWidget()
                 ],
               ),
-              const LoginWidget(),
+              LoginWidget(),
               SizedBox(
                 height: size.height / 35,
               ),

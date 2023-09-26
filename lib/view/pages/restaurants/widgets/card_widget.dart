@@ -1,10 +1,20 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard({
     Key? key,
+    required this.image,
+    required this.heading,
+    required this.foodType,
+    required this.rating,
+    required this.hotelId,
   }) : super(key: key);
-
+  final String image;
+  final String heading;
+  final String foodType;
+  final double rating;
+  final String hotelId;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -32,9 +42,8 @@ class ListCard extends StatelessWidget {
                   height: size.height / 1.1,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://imgv3.fotor.com/images/cover-photo-image/a-beautiful-girl-with-gray-hair-and-lucxy-neckless-generated-by-Fotor-AI.jpg'),
+                    image: DecorationImage(
+                      image: NetworkImage(image),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -46,19 +55,23 @@ class ListCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'The chocolate bar',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
+                    SizedBox(
+                      width: size.width / 2.8,
+                      child: Text(
+                        heading,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 15,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     SizedBox(
                       height: size.height / 350,
                     ),
-                    const Text(
-                      'Description will be here',
+                    Text(
+                      hotelId,
                       style: TextStyle(
                         fontSize: 12,
                         color: Colors.black,
@@ -68,9 +81,9 @@ class ListCard extends StatelessWidget {
                     SizedBox(
                       height: size.height / 350,
                     ),
-                    const Text(
-                      'open from morning',
-                      style: TextStyle(
+                    Text(
+                      foodType,
+                      style: const TextStyle(
                         fontSize: 10,
                         color: Colors.green,
                         fontWeight: FontWeight.bold,
@@ -79,7 +92,7 @@ class ListCard extends StatelessWidget {
                   ],
                 ),
                 const Spacer(),
-                const Column(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -87,13 +100,17 @@ class ListCard extends StatelessWidget {
                       width: 70,
                       child: Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.star,
                             size: 20,
                             color: Colors.orangeAccent,
                           ),
-                          Text(
-                            '4.5',
+                          SizedBox(
+                            width: 50,
+                            child: Text(
+                              rating.toString(),
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ],
                       ),
