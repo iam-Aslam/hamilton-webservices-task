@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task/controller/user_provider.dart';
 import 'package:task/view/pages/login/login_screen.dart';
-
 import 'controller/restaurent_provider.dart';
 
 void main() {

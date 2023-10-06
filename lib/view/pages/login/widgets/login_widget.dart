@@ -1,5 +1,4 @@
 // ignore_for_file: must_be_immutable, use_build_context_synchronously
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task/controller/user_provider.dart';
