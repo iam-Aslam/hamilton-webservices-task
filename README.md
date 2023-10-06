@@ -1,16 +1,23 @@
-# task
+# Hamilton Webservices Machine Task
+## Technologies Used
 
-A new Flutter project.
+- **RESTful Web Services**: The project utilizes RESTful web services for performing GET and POST operations for data communication.
+
+- **Login and Signup**: Implement user authentication and registration functionality.
+
+- **Token Authentication**: Token-based authentication secures user sessions.
+
+- **Dio**: Dio is a powerful HTTP client for Dart, which is commonly used in Flutter for making network requests.
+
+- **MVC Architecture**: The project follows the Model-View-Controller architectural pattern for organizing code and separating concerns.
+
+- **Provider State Management**: Utilize the Provider package for state management.
+  
+- **User-Friendly UI with Linear Gradients**: Create a visually appealing user interface with linear gradients for a polished look.
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Provide instructions on how to get started with your project, including any setup or installation steps.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
